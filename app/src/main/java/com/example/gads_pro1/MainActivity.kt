@@ -15,8 +15,8 @@ class MainActivity : AppCompatActivity() {
 
 
         val adapter = MyViewPagerAdapter(supportFragmentManager)
-        adapter.addFragment(LearningLeadersFragment() , " One ")
-        adapter.addFragment(SkiLeadersFragment() , " Two ")
+        adapter.addFragment(LearningLeadersFragment() , " Learning leaders  ")
+        adapter.addFragment(SkiLeadersFragment() , " Skill IQ Leaders  ")
 
 
         viewPager.adapter = adapter
