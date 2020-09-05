@@ -42,7 +42,7 @@ class SkiLeadersFragment : Fragment() {
 
     @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        tv_fragment_name.text = "Fragment One"
+        tv_fragment_name.text = "Fragment Skill IQ Leaders "
     }
 
     companion object {
