@@ -35,20 +35,37 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/doctor_name"
+                        android:id="@+id/learner_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Miss.Kelai Afaf"
                         android:textColor="@color/darkBlue"
                         android:textSize="20dp"
                         android:textStyle="bold" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:text="Score total , Country  "
-                        android:textColor="@color/dark"
-                        android:textSize="18dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/score"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:text="Score total"
+                            android:textColor="@color/dark"
+                            android:textSize="18dp" />
+
+                        <TextView
+                            android:id="@+id/country"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:text="Country  "
+                            android:textColor="@color/dark"
+                            android:textSize="18dp" />
+                    </LinearLayout>
+
 
 
                 </LinearLayout>

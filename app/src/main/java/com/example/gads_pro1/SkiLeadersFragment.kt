@@ -2,11 +2,18 @@ package com.example.gads_pro1
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.support.v4.app.Fragment
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import kotlinx.android.synthetic.main.fragment_ski_leaders.*
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.gads_pro1.adapters.learnerAdapter
+import com.example.gads_pro1.adapters.skillAdapter
+import com.example.gads_pro1.models.Skill
+import com.example.gads_pro1.models.leader
+import kotlinx.android.synthetic.main.fragment_learning_leaders.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -24,11 +31,14 @@ class SkiLeadersFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    var skill = ArrayList<Skill>()
+    lateinit var recyclerView: RecyclerView
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+            skill = it.getSerializable("Skill") as ArrayList<Skill>
         }
     }
 
@@ -37,7 +47,16 @@ class SkiLeadersFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_ski_leaders, container, false)
+        var v = inflater.inflate(R.layout.fragment_ski_leaders, container, false)
+
+        recyclerView = v.findViewById<RecyclerView>(R.id.SkileaderRV)
+
+        recyclerView.apply {
+            layoutManager = LinearLayoutManager(this.context)
+            adapter = skillAdapter(skill,this@SkiLeadersFragment)
+        }
+
+        return v
     }
 
     @SuppressLint("SetTextI18n")

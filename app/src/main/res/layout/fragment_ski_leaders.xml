@@ -15,6 +15,7 @@
         android:text="@string/Skillleaders" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/SkileaderRV"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
